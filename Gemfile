@@ -17,6 +17,8 @@ gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 gem 'better_errors'
 gem 'devise'
 gem 'puma'
+gem 'unirest'
+gem 'figaro'
 
 group :production do 
   gem 'pg'

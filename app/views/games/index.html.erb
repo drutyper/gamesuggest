@@ -1,1 +1,9 @@
 <h1> Game Suggester </h1>
+
+
+  <h3>Suggest a game</h3>
+  <%= form_tag @game do |f| %>
+    <%= f.text_field :platform %>
+    <%= f.text_field :name %>
+    <button>Save</button>
+  <% end %>
