@@ -1,9 +1,16 @@
 <h1> Game Suggester </h1>
-
+  
+  <h3>What kind of game are you looking for?</h3>
+  <%= form_for :ask_game_index do |f| %>
+    <%= f.text_field :content, placeholder: "What type of game?" %>
+    <button>Ask</button>
+  <% end %>  
 
   <h3>Suggest a game</h3>
-  <%= form_tag @game do |f| %>
-    <%= f.text_field :platform %>
-    <%= f.text_field :name %>
-    <button>Save</button>
+  <%= form_for @games do |f| %>
+    <h5>Platforms: ps4, xboxone, ps3, xbox360, pc, wii-u, 3ds, vita, ios</h5>
+    <%= f.text_field :platform, placeholder: "Platform"%>
+    <%= f.text_field :name, placeholder: "Title"%>
+    <button>Search</button>
   <% end %>
+
