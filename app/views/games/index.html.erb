@@ -1,16 +1,43 @@
 <h1> Game Suggester </h1>
   
   <h3>What kind of game are you looking for?</h3>
-  <%= form_for :ask_game_index do |f| %>
-    <%= f.text_field :content, placeholder: "What type of game?" %>
+  <%= form_tag @ask do %>
+    <%= text_field :content, placeholder: "What type of game?" %>
     <button>Ask</button>
   <% end %>  
 
   <h3>Suggest a game</h3>
-  <%= form_for @games do |f| %>
+  <%= form_for @game do |f| %>
     <h5>Platforms: ps4, xboxone, ps3, xbox360, pc, wii-u, 3ds, vita, ios</h5>
     <%= f.text_field :platform, placeholder: "Platform"%>
     <%= f.text_field :name, placeholder: "Title"%>
     <button>Search</button>
   <% end %>
 
+<h1> Game Requests </h1>
+  <h2> Asked Game Type </h2>
+  <table>
+  <tbody>
+    <tr>
+      <td><%=  %></td>
+    </tr>  
+  <table class="table table_striped table-hover">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Score</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @games.each do |game| %>
+        <tr>
+          <td><img src="<%= game.thumbnail %>"></td>
+          <td><%= game.name %></td>
+          <td><%= game.description %></td>
+          <td><%= game.score %></td>
+          <td><%= link_to game.url %></td>
+
+      <% end %>

@@ -2,8 +2,8 @@ class GamesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @games = Game.new
-    @ask_game = AskGame.new
+    @game = Game.new
+    @games = Game.all
   end
 
   def new
@@ -14,6 +14,7 @@ class GamesController < ApplicationController
   end
 
   def create
+    @ask = AskGame.new
     @game = Game.where(:platform, :name)
     @meta = MetacriticAPI.new
     
@@ -26,9 +27,4 @@ class GamesController < ApplicationController
     redirect_to "/games"
     end
   end
-
-  # def search
-  #   @meta = MetacriticAPI.new
-  #   @search = @meta.game_suggest params[:platform], params[:title]
-  # end
 end
