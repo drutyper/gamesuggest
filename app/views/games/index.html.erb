@@ -1,10 +1,7 @@
 <h1> Game Suggester </h1>
   
-  <h3>What kind of game are you looking for?</h3>
-  <%= form_tag @ask do %>
-    <%= text_field :content, placeholder: "What type of game?" %>
-    <button>Ask</button>
-  <% end %>  
+  
+  <%= link_to "New Game Type Entry", new_ask_game_path, class: "btn btn-primary" %>
 
   <h3>Suggest a game</h3>
   <%= form_for @game do |f| %>

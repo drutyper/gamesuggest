@@ -14,7 +14,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    @ask = AskGame.new
     @game = Game.where(:platform, :name)
     @meta = MetacriticAPI.new
     
